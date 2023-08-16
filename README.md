@@ -3,7 +3,7 @@
 
 ## Getting Started
 
-Firt, install the dependencies:
+First, install dependencies:
 
 ```bash
 npm install
@@ -16,6 +16,13 @@ npm run dev
 yarn dev
 # or
 pnpm dev
+```
+Third, create and populate a database.
+
+```bash
+npx prisma generate
+npx prisma migrate dev
+npx prisma db seed
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
