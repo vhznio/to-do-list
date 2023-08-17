@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 /* eslint-disable react/function-component-definition */
 import * as Material from '@mui/material';
 import React from 'react';
 import { GetTaskDto } from '@/server/tasks/domain/dto/getTask.dto';
-import TaskRow from './task-row';
+import TaskCells from './task-cells';
 
 interface RowProps {
   data: GetTaskDto[];
@@ -37,9 +38,13 @@ const TaskTable: React.FC<RowProps> = ({ data, headers }) => {
                 key={cell.id}
                 sx={{
                   bgcolor: checkedTask.bgColor,
+                  '&:hover': {
+                    color: 'gray',
+                    backgroundColor: 'secondary.main',
+                  },
                 }}
               >
-                <TaskRow
+                <TaskCells
                   date={cell.date}
                   id={cell.id}
                   name={cell.name}

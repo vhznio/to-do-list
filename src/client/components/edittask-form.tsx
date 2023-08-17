@@ -7,29 +7,32 @@ import * as Material from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useRouter } from 'next/navigation';
+import dayjs from 'dayjs';
+import { GetTaskDto } from '@/server/tasks/domain/dto/getTask.dto';
 import InputText from './custom/input-text';
 import BasicDateTimePicker from './custom/input-date-time';
 import BasicSelect from './custom/select-priority';
 
-const NewTaskForm = () => {
+const EditTaskForm = ({ id, name, priority }: GetTaskDto) => {
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      name: '',
-      date: new Date(''),
-      priority: '',
+      id,
+      name,
+      date: dayjs(Date()),
+      priority,
     },
     onSubmit: async (values) => {
       try {
-        const endpoint = 'api/tasks';
+        const endpoint = `api/tasks/${id}`;
         const body = {
+          id: values.id,
           name: values.name,
           date: values.date,
           priority: values.priority,
-          status: false,
         };
         const response = await fetch(endpoint, {
-          method: 'POST',
+          method: 'PUT',
           body: JSON.stringify(body),
           headers: {
             'Content-Type': 'application/json',
@@ -69,10 +72,10 @@ const NewTaskForm = () => {
         options={['HIGH', 'MID', 'LOW']}
       />
       <Material.Button color="primary" type="submit" variant="contained">
-        CREATE
+        EDIT
       </Material.Button>
     </Material.Grid>
   );
 };
 
-export default NewTaskForm;
+export default EditTaskForm;
