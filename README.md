@@ -1,4 +1,4 @@
-![image](https://github.com/vhznio/to-do-list/assets/120274887/5f5f7df3-c2e0-4e19-acc3-8e15010b9977)
+![image](https://github.com/vhznio/to-do-list/assets/120274887/8cf8b788-cbcb-4a98-b3b2-3bda8d7c4998)
 
 
 ## Getting Started
