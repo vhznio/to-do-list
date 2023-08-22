@@ -2,8 +2,7 @@
 import prisma from '@/server/prisma';
 import { CheckTaskDto } from '../domain/dto/checkTask.dto';
 
-export async function checkTaskUseCase({ taskId, status }: CheckTaskDto) {
-  const id = parseInt(taskId);
+export async function checkTaskUseCase({ id, status }: CheckTaskDto) {
   return prisma.$transaction(async (Prisma) => {
     await Prisma.task.update({
       where: { id },

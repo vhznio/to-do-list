@@ -27,6 +27,7 @@ const PopUp = ({ isOpen, handleModal, form }: PopUpProps) => {
           pt: 2,
           px: 4,
           pb: 3,
+          border: 'none',
         }}
       >
         {form}

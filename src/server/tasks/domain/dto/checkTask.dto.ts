@@ -1,4 +1,4 @@
 export interface CheckTaskDto {
-  taskId: string;
+  id: number;
   status: boolean;
 }
