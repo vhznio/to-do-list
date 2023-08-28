@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import * as Mui from '@mui/x-date-pickers';
 import { FormikProps } from 'formik';
 
@@ -29,16 +28,14 @@ export default function BasicDateTimePicker({
   };
 
   return (
-    <Mui.LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Mui.DateTimePicker
-        slotProps={{
-          textField: {
-            error: false,
-          },
-        }}
-        sx={{ border: 'none' }}
-        {...dateTimePickerProps}
-      />
-    </Mui.LocalizationProvider>
+    <Mui.DateTimePicker
+      slotProps={{
+        textField: {
+          error: false,
+        },
+      }}
+      sx={{ border: 'none' }}
+      {...dateTimePickerProps}
+    />
   );
 }
