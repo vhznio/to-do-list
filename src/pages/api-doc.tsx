@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const spec: Record<string, any> = createSwaggerSpec({
     definition: {
       info: {
-        title: 'To do list',
+        title: 'TO DO LIST',
         version: '1.0',
       },
       openapi: '3.0.0',
