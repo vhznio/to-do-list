@@ -7,7 +7,7 @@ import buttonMsg from '@/client/constants/button-msg';
 import title from '@/client/constants/title';
 import { GetTaskDto } from '@/server/tasks/domain/dto/getTask.dto';
 
-const taskEndpoint = `${process.env.NEXTAUTH_URL}/api/tasks`;
+const taskEndpoint = `${process.env.BASE_URL}/api/tasks`;
 
 export const getServerSideProps: GetServerSideProps<{
   tasks: GetTaskDto[],
