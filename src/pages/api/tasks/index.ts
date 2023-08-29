@@ -31,3 +31,45 @@ export default async function handler(
     res.status(500).json({ error: 'Internal server error' });
   }
 }
+
+/**
+ *  @openapi
+ *  /api/tasks:
+ *    get:
+ *      tags:
+ *        - Tasks
+ *      summary: Get tasks.
+ *      responses:
+ *        200:
+ *          description: Returns an object with the task data.
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  id:
+ *                    type: number
+ *                    description: ID of the task.
+ *                  name:
+ *                    type: string
+ *                  date:
+ *                    type: Date
+ *                  priority:
+ *                    type: string
+ *                  status:
+ *                    type: boolean
+ *              example:
+ *                id: 1
+ *                name: Study
+ *                date: 2023-08-13T14:30:00
+ *                priority: HIGH
+ *                status: true
+ *        400:
+ *          description: Returns an object with an error code.
+ *          content:
+ *            application/json:
+ *              example:
+ *                message:
+ *                  text: "An error has occurred in the request."
+ *                  severity: "error"
+ */
